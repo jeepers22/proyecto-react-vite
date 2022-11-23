@@ -3,7 +3,7 @@ import { GiShoppingCart } from 'react-icons/gi';
 
 const CartWidget = () => {
     return (
-        <GiShoppingCart className="logo-carrito"/>
+        <div className="contador d-flex align-items-center"><GiShoppingCart className="logo-carrito"/></div>
     )
 }
 
