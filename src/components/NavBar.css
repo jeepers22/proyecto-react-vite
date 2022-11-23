@@ -1,0 +1,18 @@
+.navegador {
+    box-shadow: 0px 3px 10px rgb(0, 0, 0, 1);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+a {
+    padding: 5px !important;
+}
+
+.nav-link:hover {
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+    transition: 0.3s ease-out;
+}
