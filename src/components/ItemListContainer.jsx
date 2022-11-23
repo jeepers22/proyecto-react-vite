@@ -1,9 +1,11 @@
 import "./ItemListContainer.css"
 
-const ItemListContainer = () => {
+const ItemListContainer = ( { greeting } ) => {
     return (
         <div className="main">
-            <p>Hola, soy un texto en el body</p>
+            <div className="saludo">
+                <spam>{greeting}</spam>
+            </div>
         </div>
     )
 }

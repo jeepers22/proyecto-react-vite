@@ -6,7 +6,9 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer
+          greeting="Bienvenido al orígen de mi E-commerse!"
+      />
     </div>
   )
 }
