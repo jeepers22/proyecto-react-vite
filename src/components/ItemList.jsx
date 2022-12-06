@@ -7,6 +7,7 @@ const ItemList = ({ items }) => {
         items.map(pelicula => (
             <Item
                 key= {pelicula.idPelicula}
+                id= {pelicula.idPelicula}
                 titulo= {pelicula.titulo}
                 genero= {pelicula.genero}
                 anio= {pelicula.anio}
