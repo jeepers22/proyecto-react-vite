@@ -13,7 +13,7 @@ const NavBar = () => {
                     <NavLink to={"/"} className="navbar-brand logo" >MovieHouse</NavLink>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto text-center">
+                        <Nav className="mx-auto text-center gap-md-3 gap-lg-4">
                             <NavLink to={"/genero/1"} className="nav-link" href="#">Comedia</NavLink>
                             <NavLink to={"/genero/2"} className="nav-link" href="#">Drama</NavLink>
                             <NavLink to={"/genero/3"} className="nav-link" href="#">Terror</NavLink>
