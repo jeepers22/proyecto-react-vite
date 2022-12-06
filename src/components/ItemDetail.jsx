@@ -1,16 +1,17 @@
 import React from 'react'
-import "./ItemDetail.css"
+import Card from 'react-bootstrap/Card';
 
 const ItemDetail = ({ item }) => {
 
     return (
-        <div className="col-2 card">
-            <div className="card_info">
-                <h3>{item.titulo}</h3>
-                <h5>{item.genero} - {item.anio}</h5>
-                <p>{item.resenia}</p>
-            </div>
-        </div>
+        <Card style={{ width: '17rem' }}>
+            <Card.Img variant="top" src={item.portada} />
+            <Card.Body>
+                <Card.Title>{item.titulo}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{item.genero} - {item.anio}</Card.Subtitle>
+                <Card.Text>{item.resenia}</Card.Text>
+            </Card.Body>
+        </Card>
     )
 }
 

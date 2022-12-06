@@ -4,6 +4,7 @@ import customFetch from "../utils/customFetch"
 import catalogo from "../utils/catalogo"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Container from "react-bootstrap/Container"
 
 const ItemDatailContainer = () => {
 
@@ -21,11 +22,9 @@ const ItemDatailContainer = () => {
 	}, [peliculaEstado])
 
 	return (
-		<div className="row catalogo_container">
-        {
+		<Container className="d-flex justify-content-center">
 			<ItemDetail item= {peliculaEstado} />
-        }
-        </div>
+		</Container>
 	)
 }
 

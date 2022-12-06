@@ -1,15 +1,16 @@
 import React from 'react'
-import "./Item.css"
+import Card from 'react-bootstrap/Card';
 
-const Item = ({ titulo, genero, anio, resenia }) => {
+const Item = ({ titulo, genero, anio, resenia, portada }) => {
     return (
-        <div className="col-2 card">
-            <div className="card_info">
-                <h3>{titulo}</h3>
-                <h5>{genero} - {anio}</h5>
-                <p>{resenia}</p>
-            </div>
-        </div>
+        <Card style={{ width: '17rem' }}>
+            <Card.Img variant="top" src={portada} />
+            <Card.Body>
+                <Card.Title>{titulo}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{genero} - {anio}</Card.Subtitle>
+                <Card.Text>{resenia}</Card.Text>
+            </Card.Body>
+        </Card>
     )
 }
 

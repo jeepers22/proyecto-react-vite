@@ -11,6 +11,7 @@ const ItemList = ({ items }) => {
                 genero= {pelicula.genero}
                 anio= {pelicula.anio}
                 resenia= {pelicula.resenia}
+                portada= {pelicula.portada}
             />
         ))
     )
