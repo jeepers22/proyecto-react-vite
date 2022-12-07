@@ -19,7 +19,7 @@ const NavBar = () => {
                             <NavLink to={"/genero/3"} className="nav-link" href="#">Terror</NavLink>
                         </Nav>
                         <Nav>
-                            <a className="logo-carrito" href="#"><CartWidget /></a>
+                            <a className="logo-carrito" href="#"><CartWidget/></a>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
