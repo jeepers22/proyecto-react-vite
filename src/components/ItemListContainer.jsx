@@ -21,7 +21,7 @@ const ItemListContainer = () => {
 
     // ComponentDidUpdate
     useEffect(() => {
-        customFetch(2000, catalogo.filter(pelicula => {
+        customFetch(500, catalogo.filter(pelicula => {
             if (idGeneroParam === undefined) return pelicula
             return pelicula.idGenero === parseInt(idGeneroParam)
         }))

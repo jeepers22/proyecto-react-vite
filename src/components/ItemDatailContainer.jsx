@@ -14,7 +14,7 @@ const ItemDatailContainer = () => {
 
 	// ComponentDidUpdate
 	useEffect(() => {
-		customFetch(2000, catalogo.find(pelicula =>
+		customFetch(500, catalogo.find(pelicula =>
 			pelicula.idPelicula === parseInt(idPeliculaParam)
 		))
 			.then(response => setPeliculaEstado(response))
