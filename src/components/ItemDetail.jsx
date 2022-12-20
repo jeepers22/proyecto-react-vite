@@ -4,13 +4,18 @@ import Button from "react-bootstrap/Button"
 import { NavLink } from "react-router-dom"
 import ItemCount from './ItemCount'
 import { useState } from "react"
+import { CartContext } from './CartContext'
+import { useContext } from 'react'
 
 const ItemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0)
 
+    const { addItem } = useContext(CartContext)
+
     const onAdd = (qty) => {
         setItemCount(qty)
+        addItem(item, qty)
     }
 
     return (
