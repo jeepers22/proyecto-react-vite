@@ -4,7 +4,6 @@ import { getFirestore } from "firebase/firestore";
 
 const catalogo = [
     {
-        idPelicula: 1,
         idGenero: 1,
         genero: "Comedia",
         titulo: "Noche de Juegos",
@@ -13,7 +12,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/noche-de-juegos_b5gamc.jpg"
     },
     {
-        idPelicula: 2,
         idGenero: 1,
         genero: "Comedia",
         titulo: "TED",
@@ -22,7 +20,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670306305/ted_mit5vw.jpg"
     },
     {
-        idPelicula: 3,
         idGenero: 2,
         genero: "Drama",
         titulo: "En busca de la felicidad",
@@ -31,7 +28,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/en-busqueda-de-la-felicidad_hy1u94.jpg"
     },
     {
-        idPelicula: 4,
         idGenero: 2,
         genero: "Drama",
         titulo: "El hombre bicentenario",
@@ -40,7 +36,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/el-hombre-bicentenario_suupsm.jpg"
     },
     {
-        idPelicula: 5,
         idGenero: 3,
         genero: "Terror",
         titulo: "IT",
@@ -49,7 +44,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/it_ibrtbw.jpg"
     },
     {
-        idPelicula: 6,
         idGenero: 3,
         genero: "Terror",
         titulo: "El amanecer de los muertos",
@@ -61,12 +55,21 @@ const catalogo = [
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCL1EuNUhGtuTk9CYJC-ZYUpTc1RQjbZVg",
-    authDomain: "proyecto-react-e75cf.firebaseapp.com",
-    projectId: "proyecto-react-e75cf",
-    storageBucket: "proyecto-react-e75cf.appspot.com",
-    messagingSenderId: "130925470865",
-    appId: "1:130925470865:web:82933498e0ab0a38c9cb30"
+// Creado con maxizero@gmail.com se me excedió la cuota diaria
+    // apiKey: "AIzaSyCL1EuNUhGtuTk9CYJC-ZYUpTc1RQjbZVg",
+    // authDomain: "proyecto-react-e75cf.firebaseapp.com",
+    // projectId: "proyecto-react-e75cf",
+    // storageBucket: "proyecto-react-e75cf.appspot.com",
+    // messagingSenderId: "130925470865",
+    // appId: "1:130925470865:web:82933498e0ab0a38c9cb30"
+
+    // Creado con maxizerodev@gmail.com
+    apiKey: "AIzaSyD85SGU5RHT6m9hcoZuzpVN7Nsnhwdjslw",
+    authDomain: "proyecto-final-react-b5e77.firebaseapp.com",
+    projectId: "proyecto-final-react-b5e77",
+    storageBucket: "proyecto-final-react-b5e77.appspot.com",
+    messagingSenderId: "374680553485",
+    appId: "1:374680553485:web:252700d13f9dd3107f2d44"
 };
 
 // Initialize Firebase

@@ -1,6 +1,5 @@
 const catalogo = [
     {
-        idPelicula: 1,
         idGenero: 1,
         genero: "Comedia",
         titulo: "Noche de Juegos",
@@ -9,7 +8,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/noche-de-juegos_b5gamc.jpg"
     },
     {
-        idPelicula: 2,
         idGenero: 1,
         genero: "Comedia",
         titulo: "TED",
@@ -18,7 +16,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670306305/ted_mit5vw.jpg"
     },
     {
-        idPelicula: 3,
         idGenero: 2,
         genero: "Drama",
         titulo: "En busca de la felicidad",
@@ -27,7 +24,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/en-busqueda-de-la-felicidad_hy1u94.jpg"
     },
     {
-        idPelicula: 4,
         idGenero: 2,
         genero: "Drama",
         titulo: "El hombre bicentenario",
@@ -36,7 +32,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/el-hombre-bicentenario_suupsm.jpg"
     },
     {
-        idPelicula: 5,
         idGenero: 3,
         genero: "Terror",
         titulo: "IT",
@@ -45,7 +40,6 @@ const catalogo = [
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/it_ibrtbw.jpg"
     },
     {
-        idPelicula: 6,
         idGenero: 3,
         genero: "Terror",
         titulo: "El amanecer de los muertos",

@@ -1,10 +1,9 @@
-import "./ItemListContainer.css"
 import ItemList from "./ItemList"
-import customFetch from "../utils/customFetch"
-import catalogo from "../utils/catalogo"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Container from "react-bootstrap/Container"
+import { collection, getDocs, where, query } from "firebase/firestore"
+import { db } from "../utils/firebaseConfig"
 
 const ItemListContainer = () => {
 
@@ -14,13 +13,25 @@ const ItemListContainer = () => {
 
     // ComponentDidUpdate
     useEffect(() => {
-        customFetch(500, catalogo.filter(pelicula => {
-            if (idGeneroParam === undefined) return pelicula
-            return pelicula.idGenero === parseInt(idGeneroParam)
-        }))
-            .then (response => setPeliculas(response))
+        const getCollectionFromFirebase = async () => {
+            let q
+            if (idGeneroParam) {
+                q = query(collection(db, "products"), where("idGenero", "==", parseInt(idGeneroParam)))
+            } else {
+                q = query(collection(db, "products"))
+            }
+            const queryDocsProducts = await getDocs(q)
+            const products = queryDocsProducts.docs.map((doc) => (
+                {
+                    idPelicula: doc.id,
+                    ...doc.data()
+                }))
+            return products
+        }
+        getCollectionFromFirebase()
+            .then (result => setPeliculas(result))
             .catch (err => console.log(err))
-    }, [peliculas])
+    }, [idGeneroParam])
 
     return (
         <Container className="d-flex flex-wrap justify-content-center gap-4 mt-5">
