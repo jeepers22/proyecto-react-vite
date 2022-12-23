@@ -12,13 +12,6 @@ const ItemListContainer = () => {
 
     const { idGeneroParam } = useParams()
 
-    // ComponentDidMount
-    // useEffect(() => {
-    //     customFetch(2000, catalogo)
-    //         .then (response => setPeliculas(catalogo))
-    //         .catch (err => console.log(err))
-    // }, [])
-
     // ComponentDidUpdate
     useEffect(() => {
         customFetch(500, catalogo.filter(pelicula => {

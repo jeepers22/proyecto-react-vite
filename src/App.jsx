@@ -6,8 +6,11 @@ import ItemDetailContainer from "./components/ItemDatailContainer"
 import Cart from "./components/Cart"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartContextProvider from "./components/CartContext";
+// import { enviarProductos } from "../src/utils/productosToFirebase"
 
 const App = () => {
+
+	// enviarProductos()
 
 	return (
 		<CartContextProvider>
