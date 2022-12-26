@@ -2,7 +2,7 @@ import React from 'react'
 import { CartContext } from './CartContext'
 import { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
-import { serverTimestamp, doc, setDoc, collection  } from 'firebase/firestore'
+import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from 'firebase/firestore'
 import { db } from '../utils/firebaseConfig'
 
 const Cart = () => {
@@ -35,6 +35,23 @@ const Cart = () => {
         sendOrderToFireStore()
             .then(result => {
                 alert(`Compra exitosa, se generó la orden de compra nro: ${result.id}`)
+
+                // Actualizando stock
+                const updateOrderFirestore = async(item) => {
+                    const itemRef = doc(db, "products", item.idPelicula)
+                    await updateDoc(itemRef, {
+                        stock: increment(-item.qty)
+                    })
+                    return itemRef
+                }
+
+                cartItems.forEach((item) =>
+                    updateOrderFirestore(item)
+                        .then(result => console.log("Stock actualizado correctamente")) // ! QUE PONGO EN EL THEN???????? **************
+                        .catch(err => console.log(err))
+                )
+
+                // Vaciando carrito
                 clearCart()
             })
             .catch(err => console.log(err))
