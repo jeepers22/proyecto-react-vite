@@ -12,8 +12,9 @@ const CartContextProvider = ({ children }) => {
         : setCartItems([...cartItems, {
                 idPelicula: item.idPelicula,
                 titulo: item.titulo,
+                precio: item.precio,
                 qty: quantity
-            }]) // ** VER QUE PONER ACA PARA QUE AGREGUE TODOS
+            }])
         }
 
     const addCartItemQty = (item, quantity) => {
@@ -23,15 +24,16 @@ const CartContextProvider = ({ children }) => {
             ? {
                 idPelicula: itemCart.idPelicula,
                 titulo: itemCart.titulo,
+                precio: item.precio,
                 qty: itemCart.qty + quantity
-              }
+            }
             : itemCart
         )
         setCartItems(cartUpdate)
     }
 
     const removeItem = (itemId) => {
-        const updateCart = cartItems.filter(item => item.id !== itemId)
+        const updateCart = cartItems.filter(item => item.idPelicula !== itemId)
         setCartItems(updateCart)
     }
 
@@ -41,8 +43,17 @@ const CartContextProvider = ({ children }) => {
 
     const isInCart = (itemId) => cartItems.some(item => item.idPelicula === itemId)
 
+    const countCartItems = () => { // ! OJO QUE CREO QUE NO LO ESTOY USANDO ***********************************************
+        const cantItems = cartItems.reduce((acum, item) => acum + item.qty, 0)
+        if (cantItems > 0) {
+            return cantItems
+        }
+    }
+
+    const calcTotalPrice = () => cartItems.reduce((acum, item) => acum + (item.precio * item.qty), 0)
+
     return (
-        <CartContext.Provider value={{cartItems, addItem, removeItem, clearCart, isInCart}}>
+        <CartContext.Provider value={{cartItems, addItem, removeItem, clearCart, isInCart, countCartItems, calcTotalPrice}}>
             {children}
         </CartContext.Provider>
     )

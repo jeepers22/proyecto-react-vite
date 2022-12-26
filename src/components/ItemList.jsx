@@ -10,6 +10,8 @@ const ItemList = ({ items }) => {
                 titulo= {pelicula.titulo}
                 genero= {pelicula.genero}
                 anio= {pelicula.anio}
+                precio= {pelicula.precio}
+                stock= {pelicula.stock}
                 resenia= {pelicula.resenia}
                 portada= {pelicula.portada}
             />

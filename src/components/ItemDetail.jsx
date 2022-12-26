@@ -3,9 +3,8 @@ import Card from 'react-bootstrap/Card'
 import Button from "react-bootstrap/Button"
 import { NavLink } from "react-router-dom"
 import ItemCount from './ItemCount'
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { CartContext } from './CartContext'
-import { useContext } from 'react'
 
 const ItemDetail = ({ item }) => {
 
@@ -15,7 +14,11 @@ const ItemDetail = ({ item }) => {
 
     const onAdd = (qty) => {
         setItemCount(qty)
-        addItem(item, qty)
+        if (item.stock >= qty) {
+            addItem(item, qty)
+        } else {
+            alert(`No disponemos de ${qty} unidades de ${item.titulo}`)
+        }
     }
 
     return (
@@ -24,6 +27,8 @@ const ItemDetail = ({ item }) => {
             <Card.Body>
                 <Card.Title>{item.titulo}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{item.genero} - {item.anio}</Card.Subtitle>
+                <Card.Text>Precio: {item.precio}</Card.Text>
+                <Card.Text>Unidades: {item.stock}</Card.Text>
                 <Card.Text>{item.resenia}</Card.Text>
                 {
                 itemCount

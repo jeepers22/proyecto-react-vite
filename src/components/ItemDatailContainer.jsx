@@ -1,8 +1,9 @@
 import ItemDetail from "./ItemDetail"
-// import catalogo from "../utils/catalogo"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Container from "react-bootstrap/Container"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../utils/firebaseConfig"
 
 const ItemDatailContainer = () => {
 
@@ -11,19 +12,23 @@ const ItemDatailContainer = () => {
 	const { idPeliculaParam } = useParams()
 
 	// ComponentDidUpdate
-	// useEffect(() => {
-
-	// }, [peliculaEstado])
-
-	// VERSION CUSTOM FETCH
-	// ComponentDidUpdate
-	// useEffect(() => {
-	// 	customFetch(500, catalogo.find(pelicula =>
-	// 		pelicula.idPelicula === parseInt(idPeliculaParam)
-	// 	))
-	// 		.then(response => setPeliculaEstado(response))
-	// 		.catch(err => console.log(err))
-	// }, [peliculaEstado])
+	useEffect(() => {
+		const getDocFromFirebase = async () => {
+			const docRef = doc(db, "products", idPeliculaParam)
+            const docProduct = await getDoc(docRef)
+			if (docProduct) {
+				return {
+					idPelicula: docProduct.id,
+					...docProduct.data()
+				}
+			} else {
+				console.log("El id de película ingresado en la URL no existe")
+			}
+        }
+        getDocFromFirebase()
+            .then (result => setPeliculaEstado(result))
+            .catch (err => console.log(err))
+	}, [idPeliculaParam])
 
 	return (
 		<Container className="d-flex justify-content-center">

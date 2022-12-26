@@ -6,10 +6,15 @@
 
 .contador {
     position: relative;
+    color: white;
 }
 
-.contador::before {
-    content: "4";
+.link-style {
+    text-decoration: none;
+}
+
+/* .contador::before {
+    content: "";
     color: #fff;
     background-color: red;
     font-size: 0.9rem;
@@ -19,8 +24,8 @@
     height: 20px;
     border-radius: 50%;
     top: calc(50% - height/2);
-    left: 100%;
-}
+    left: 70%;
+} */
 
 @media (max-width: 768px) {
     .contador {
