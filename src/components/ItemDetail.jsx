@@ -13,8 +13,8 @@ const ItemDetail = ({ item }) => {
     const { addItem } = useContext(CartContext)
 
     const onAdd = (qty) => {
-        setItemCount(qty)
         if (item.stock >= qty) {
+            setItemCount(qty)
             addItem(item, qty)
         } else {
             alert(`No disponemos de ${qty} unidades de ${item.titulo}`)
