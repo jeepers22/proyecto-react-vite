@@ -38,6 +38,7 @@ const catalogo = [
         genero: "Drama",
         titulo: "El hombre bicentenario",
         anio: 3300,
+        precio: 1500,
         stock: 1,
         resenia: "En la primera década del nuevo milenio, con avances tecnológicos que engullen la soberanía de la compasión humana, Richard Martin compra un regalo, un nuevo robot NDR-114. El hijo más pequeño de la familia le pone de nombre Andrew. Andrew es adquirido como electrodoméstico casero programado para realizar tareas menores. A medida que Andrew empieza a experimentar emociones y pensamiento creativo, la familia Martin descubre pronto que no tienen un robot común y corriente",
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1670307607/el-hombre-bicentenario_suupsm.jpg"

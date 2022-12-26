@@ -43,7 +43,7 @@ const CartContextProvider = ({ children }) => {
 
     const isInCart = (itemId) => cartItems.some(item => item.idPelicula === itemId)
 
-    const countCartItems = () => { // ! OJO QUE CREO QUE NO LO ESTOY USANDO ***********************************************
+    const countCartItems = () => {
         const cantItems = cartItems.reduce((acum, item) => acum + item.qty, 0)
         if (cantItems > 0) {
             return cantItems
