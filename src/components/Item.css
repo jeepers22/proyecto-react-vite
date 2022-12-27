@@ -1,0 +1,15 @@
+.card-container {
+    width: 250px;
+    /* background-color: #eee; */
+}
+
+.card-img-container {
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img {
+    max-width: 220px;
+}

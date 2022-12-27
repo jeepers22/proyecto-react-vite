@@ -1,10 +1,9 @@
 .logo-carrito {
     font-size: 2.5rem;
-    color: #fff;
     color: orange;
 }
 
-.contador {
+.carrito {
     position: relative;
     color: white;
 }
@@ -13,9 +12,8 @@
     text-decoration: none;
 }
 
-/* .contador::before {
+/* .carrito::before {
     content: "";
-    color: #fff;
     background-color: red;
     font-size: 0.9rem;
     text-align: center;
@@ -28,11 +26,7 @@
 } */
 
 @media (max-width: 768px) {
-    .contador {
+    .carrito {
         justify-content: center;
-    }
-
-    .contador::before {
-        left: calc(50% + 21px)
     }
 }
