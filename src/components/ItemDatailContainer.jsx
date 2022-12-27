@@ -16,13 +16,13 @@ const ItemDatailContainer = () => {
 		const getDocFromFirebase = async () => {
 			const docRef = doc(db, "products", idPeliculaParam)
             const docProduct = await getDoc(docRef)
-			if (docProduct) {
+			if (docProduct.exists()) {
 				return {
 					idPelicula: docProduct.id,
 					...docProduct.data()
 				}
 			} else {
-				console.log("El id de película ingresado en la URL no existe")
+				console.log("Intentando acceder a un Item inexistente")
 			}
         }
         getDocFromFirebase()
@@ -32,7 +32,9 @@ const ItemDatailContainer = () => {
 
 	return (
 		<Container className="d-flex justify-content-center">
-			<ItemDetail item= {peliculaEstado} />
+			{
+				peliculaEstado && <ItemDetail item= {peliculaEstado} />
+			}
 		</Container>
 	)
 }

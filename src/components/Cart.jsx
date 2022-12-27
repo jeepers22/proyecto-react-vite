@@ -1,9 +1,9 @@
-import React from 'react'
-import { CartContext } from './CartContext'
-import { useContext } from 'react'
-import Button from 'react-bootstrap/Button'
-import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from 'firebase/firestore'
-import { db } from '../utils/firebaseConfig'
+import React from "react"
+import { CartContext } from "./CartContext"
+import { useContext } from "react"
+import Button from "react-bootstrap/Button"
+import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore"
+import { db } from "../utils/firebaseConfig"
 
 const Cart = () => {
 

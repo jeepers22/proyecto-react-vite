@@ -1,10 +1,10 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card'
+import React from "react"
+import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import { NavLink } from "react-router-dom"
-import ItemCount from './ItemCount'
+import ItemCount from "./ItemCount"
 import { useState, useContext } from "react"
-import { CartContext } from './CartContext'
+import { CartContext } from "./CartContext"
 
 const ItemDetail = ({ item }) => {
 
@@ -22,7 +22,7 @@ const ItemDetail = ({ item }) => {
     }
 
     return (
-        <Card style={{ width: '17rem' }}>
+        <Card style={{ width: "17rem" }}>
             <Card.Img variant="top" src={item.portada} />
             <Card.Body>
                 <Card.Title>{item.titulo}</Card.Title>
