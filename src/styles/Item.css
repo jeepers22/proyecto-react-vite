@@ -13,3 +13,10 @@
 .card-img {
     max-width: 220px;
 }
+
+.card-button {
+    border: none;
+    background-color: orange;
+    color: #fff;
+    padding: 5px 10px;
+}

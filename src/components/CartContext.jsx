@@ -7,23 +7,23 @@ const CartContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
 
     const addItem = (item, quantity) => {
-        isInCart(item.idPelicula)
+        isInCart(item.idProd)
         ? addCartItemQty(item, quantity)
         : setCartItems([...cartItems, {
-                idPelicula: item.idPelicula,
-                titulo: item.titulo,
+                idProd: item.idProd,
+                nombre: item.nombre,
                 precio: item.precio,
                 qty: quantity
             }])
         }
 
     const addCartItemQty = (item, quantity) => {
-        const itemToUpdate = cartItems.find(itemCart => itemCart.idPelicula === item.idPelicula)
+        const itemToUpdate = cartItems.find(itemCart => itemCart.idProd === item.idProd)
         const cartUpdate = cartItems.map(itemCart =>
-            itemCart.idPelicula === itemToUpdate.idPelicula
+            itemCart.idProd === itemToUpdate.idProd
             ? {
-                idPelicula: itemCart.idPelicula,
-                titulo: itemCart.titulo,
+                idProd: itemCart.idProd,
+                nombre: itemCart.nombre,
                 precio: item.precio,
                 qty: itemCart.qty + quantity
             }
@@ -33,7 +33,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const removeItem = (itemId) => {
-        const updateCart = cartItems.filter(item => item.idPelicula !== itemId)
+        const updateCart = cartItems.filter(item => item.idProd !== itemId)
         setCartItems(updateCart)
     }
 
@@ -41,7 +41,7 @@ const CartContextProvider = ({ children }) => {
         setCartItems([])
     }
 
-    const isInCart = (itemId) => cartItems.some(item => item.idPelicula === itemId)
+    const isInCart = (itemId) => cartItems.some(item => item.idProd === itemId)
 
     const countCartItems = () => {
         const cantItems = cartItems.reduce((acum, item) => acum + item.qty, 0)

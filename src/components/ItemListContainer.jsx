@@ -9,21 +9,21 @@ const ItemListContainer = () => {
 
     const [peliculas, setPeliculas] = useState([])
 
-    const { idGeneroParam } = useParams()
+    const { idCategoriaParam } = useParams()
 
     // ComponentDidUpdate
     useEffect(() => {
         const getCollectionFromFirebase = async () => {
             let q
-            if (idGeneroParam) {
-                q = query(collection(db, "products"), where("idGenero", "==", parseInt(idGeneroParam)))
+            if (idCategoriaParam) {
+                q = query(collection(db, "products"), where("idCategoria", "==", parseInt(idCategoriaParam)))
             } else {
                 q = query(collection(db, "products"))
             }
             const queryDocsProducts = await getDocs(q)
             const products = queryDocsProducts.docs.map((doc) => (
                 {
-                    idPelicula: doc.id,
+                    idProd: doc.id,
                     ...doc.data()
                 }))
             return products
@@ -31,7 +31,7 @@ const ItemListContainer = () => {
         getCollectionFromFirebase()
             .then (result => setPeliculas(result))
             .catch (err => console.log(err))
-    }, [idGeneroParam])
+    }, [idCategoriaParam])
 
     return (
         <Container className="d-flex flex-wrap justify-content-center gap-4 mt-5">

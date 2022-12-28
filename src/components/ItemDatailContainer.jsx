@@ -9,16 +9,16 @@ const ItemDatailContainer = () => {
 
 	const [peliculaEstado, setPeliculaEstado] = useState({})
 
-	const { idPeliculaParam } = useParams()
+	const { idProdParam } = useParams()
 
 	// ComponentDidUpdate
 	useEffect(() => {
 		const getDocFromFirebase = async () => {
-			const docRef = doc(db, "products", idPeliculaParam)
+			const docRef = doc(db, "products", idProdParam)
             const docProduct = await getDoc(docRef)
 			if (docProduct.exists()) {
 				return {
-					idPelicula: docProduct.id,
+					idProd: docProduct.id,
 					...docProduct.data()
 				}
 			} else {
@@ -28,7 +28,7 @@ const ItemDatailContainer = () => {
         getDocFromFirebase()
             .then (result => setPeliculaEstado(result))
             .catch (err => console.log(err))
-	}, [idPeliculaParam])
+	}, [idProdParam])
 
 	return (
 		<Container className="d-flex justify-content-center">

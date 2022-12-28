@@ -1,4 +1,4 @@
-import "./CartWidget.css"
+import "../styles/CartWidget.css"
 import { GiShoppingCart } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react"

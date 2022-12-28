@@ -18,8 +18,8 @@ const Cart = () => {
             },
             fecha: serverTimestamp(),
             items: cartItems.map(item => ({
-                id: item.idPelicula,
-                titulo: item.titulo,
+                id: item.idProd,
+                nombre: item.nombre,
                 precio: item.precio,
                 cantidad: item.qty
             })),
@@ -38,7 +38,7 @@ const Cart = () => {
 
                 // Actualizando stock
                 const updateOrderFirestore = async(item) => {
-                    const itemRef = doc(db, "products", item.idPelicula)
+                    const itemRef = doc(db, "products", item.idProd)
                     await updateDoc(itemRef, {
                         stock: increment(-item.qty)
                     })
@@ -64,12 +64,12 @@ const Cart = () => {
             <Button variant="danger" onClick= {clearCart}>Vaciar carrito</Button>
             <ul>
             {cartItems.map(item =>
-                <li key={item.idPelicula}>
+                <li key={item.idProd}>
                     <div>
-                        <h4>{item.titulo}</h4>
+                        <h4>{item.nombre}</h4>
                         <p>Cant: {item.qty}</p>
                         <p>Precio unitario: {item.precio}</p>
-                        <Button variant="danger" onClick= {() => removeItem(item.idPelicula)}>Eliminar</Button>
+                        <Button variant="danger" onClick= {() => removeItem(item.idProd)}>Eliminar</Button>
                     </div>
                 </li>
             )}

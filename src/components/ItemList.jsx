@@ -5,14 +5,14 @@ const ItemList = ({ items }) => {
     return (
         items.map(pelicula => (
             <Item
-                key= {pelicula.idPelicula}
-                id= {pelicula.idPelicula}
-                titulo= {pelicula.titulo}
-                genero= {pelicula.genero}
+                key= {pelicula.idProd}
+                id= {pelicula.idProd}
+                nombre= {pelicula.nombre}
+                categoria= {pelicula.categoria}
                 anio= {pelicula.anio}
                 precio= {pelicula.precio}
                 stock= {pelicula.stock}
-                resenia= {pelicula.resenia}
+                descripcion= {pelicula.descripcion}
                 portada= {pelicula.portada}
             />
         ))

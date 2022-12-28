@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
             setItemCount(qty)
             addItem(item, qty)
         } else {
-            alert(`No disponemos de ${qty} unidades de ${item.titulo}`)
+            alert(`No disponemos de ${qty} unidades de ${item.nombre}`)
         }
     }
 
@@ -25,11 +25,11 @@ const ItemDetail = ({ item }) => {
         <Card style={{ width: "17rem" }}>
             <Card.Img variant="top" src={item.portada} />
             <Card.Body>
-                <Card.Title>{item.titulo}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{item.genero} - {item.anio}</Card.Subtitle>
+                <Card.Title>{item.nombre}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{item.categoria} - {item.anio}</Card.Subtitle>
                 <Card.Text>Precio: {item.precio}</Card.Text>
                 <Card.Text>Unidades: {item.stock}</Card.Text>
-                <Card.Text>{item.resenia}</Card.Text>
+                <Card.Text>{item.descripcion}</Card.Text>
                 {
                 itemCount
                 // Si tengo alguna cantidad seleccionada
