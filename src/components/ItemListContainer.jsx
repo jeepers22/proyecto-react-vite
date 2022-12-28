@@ -7,7 +7,7 @@ import { db } from "../utils/firebaseConfig"
 
 const ItemListContainer = () => {
 
-    const [peliculas, setPeliculas] = useState([])
+    const [productos, setproductos] = useState([])
 
     const { idCategoriaParam } = useParams()
 
@@ -29,13 +29,13 @@ const ItemListContainer = () => {
             return products
         }
         getCollectionFromFirebase()
-            .then (result => setPeliculas(result))
+            .then (result => setproductos(result))
             .catch (err => console.log(err))
     }, [idCategoriaParam])
 
     return (
         <Container className="d-flex flex-wrap justify-content-center gap-4 mt-5">
-            <ItemList items= {peliculas} />
+            <ItemList items= {productos} />
         </Container>
     )
 }

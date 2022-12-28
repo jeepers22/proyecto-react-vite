@@ -27,7 +27,7 @@ const ItemDetail = ({ item }) => {
             <Card.Body>
                 <Card.Title>{item.nombre}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{item.categoria} - {item.anio}</Card.Subtitle>
-                <Card.Text>Precio: {item.precio}</Card.Text>
+                <Card.Text>Precio: ${item.precio}</Card.Text>
                 <Card.Text>Unidades: {item.stock}</Card.Text>
                 <Card.Text>{item.descripcion}</Card.Text>
                 {

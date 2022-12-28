@@ -7,7 +7,7 @@ import { db } from "../utils/firebaseConfig"
 
 const ItemDatailContainer = () => {
 
-	const [peliculaEstado, setPeliculaEstado] = useState({})
+	const [prodEstado, setprodEstado] = useState({})
 
 	const { idProdParam } = useParams()
 
@@ -26,14 +26,14 @@ const ItemDatailContainer = () => {
 			}
         }
         getDocFromFirebase()
-            .then (result => setPeliculaEstado(result))
+            .then (result => setprodEstado(result))
             .catch (err => console.log(err))
 	}, [idProdParam])
 
 	return (
 		<Container className="d-flex justify-content-center">
 			{
-				peliculaEstado && <ItemDetail item= {peliculaEstado} />
+				prodEstado && <ItemDetail item= {prodEstado} />
 			}
 		</Container>
 	)
