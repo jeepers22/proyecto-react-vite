@@ -4,10 +4,22 @@ import { useContext } from "react"
 import Button from "react-bootstrap/Button"
 import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore"
 import { db } from "../utils/firebaseConfig"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Cart = () => {
 
     const { clearCart, cartItems, calcTotalPrice, removeItem } = useContext(CartContext)
+
+    const MySwal = withReactContent(Swal)
+
+    const mostrarAlert = (titulo, msjSecundario, icono) => {
+        MySwal.fire(
+            titulo,
+            msjSecundario,
+            icono
+        )
+    }
 
     const crearOrdenDeCompra = () => {
         const orden = {
@@ -34,7 +46,7 @@ const Cart = () => {
 
         sendOrderToFireStore()
             .then(result => {
-                alert(`Compra exitosa, se generó la orden de compra nro: ${result.id}`)
+                mostrarAlert("Compra exitosa", `se generó la orden de compra nro: ${result.id}`, "success")
 
                 // Actualizando stock
                 const updateOrderFirestore = async(item) => {
