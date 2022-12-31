@@ -11,7 +11,6 @@ const Item = ({ id, nombre, categoria, anio, precio, stock, portada }) => {
             <div className="card-img-container">
                 <Card.Img className="card-img p-2" variant="top" src={portada} />
             </div>
-            {/* <Card.Title className="card-title">{nombre}</Card.Title> */}
             <Card.Body className="px-2 py-3 text-center d-flex flex-column justify-content-center">
                 <Card.Subtitle className="mb-2 ms-2 text-muted text-start">{categoria} - {anio}</Card.Subtitle>
                 <Card.Text className="mt-2 fst-italic">Unidades disponibles: {stock}</Card.Text>

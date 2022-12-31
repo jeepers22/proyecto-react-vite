@@ -2,8 +2,7 @@ import ItemList from "./ItemList"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Container from "react-bootstrap/Container"
-import { collection, getDocs, where, query } from "firebase/firestore"
-import { db } from "../utils/firebaseConfig"
+import { getCollectionFromFirebase } from "../utils/ABMFirebase"
 
 const ItemListContainer = () => {
 
@@ -13,22 +12,7 @@ const ItemListContainer = () => {
 
     // ComponentDidUpdate
     useEffect(() => {
-        const getCollectionFromFirebase = async () => {
-            let q
-            if (idCategoriaParam) {
-                q = query(collection(db, "products"), where("idCategoria", "==", parseInt(idCategoriaParam)))
-            } else {
-                q = query(collection(db, "products"))
-            }
-            const queryDocsProducts = await getDocs(q)
-            const products = queryDocsProducts.docs.map((doc) => (
-                {
-                    idProd: doc.id,
-                    ...doc.data()
-                }))
-            return products
-        }
-        getCollectionFromFirebase()
+        getCollectionFromFirebase(idCategoriaParam)
             .then (result => setproductos(result))
             .catch (err => console.log(err))
     }, [idCategoriaParam])
