@@ -4,8 +4,8 @@ import { CartContext } from "./CartContext"
 import { useContext } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { serverTimestamp } from "firebase/firestore"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from "sweetalert2"
+import withReactContent from "sweetalert2-react-content"
 import { sendOrderToFireStore, updateOrderFirestore } from "../utils/ABMFirebase"
 
 const Cart = () => {
@@ -24,18 +24,18 @@ const Cart = () => {
 
     const mostrarAlertDeleteItem = (item) => {
         MySwal.fire({
-            title: 'Está seguro?',
+            title: "Está seguro?",
             text: `Está por eliminar el ítem ${item.nombre} del carrito`,
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#187c04',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, quitar ítem'
+            confirmButtonColor: "#187c04",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, quitar ítem"
         }).then((result) => {
             if (result.isConfirmed) {
                 MySwal.fire({
-                    title: 'Item eliminado',
-                    icon: 'success'
+                    title: "Item eliminado",
+                    icon: "success"
                 })
                 removeItem(item.idProd)
             }
@@ -44,18 +44,18 @@ const Cart = () => {
 
     const mostrarAlertEmptyCart = () => {
         MySwal.fire({
-            title: 'Está seguro?',
+            title: "Está seguro?",
             text: `Está por vaciar el contenido de su carrito`,
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: '#187c04',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, vaciar carrito'
+            confirmButtonColor: "#187c04",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, vaciar carrito"
         }).then((result) => {
             if (result.isConfirmed) {
                 MySwal.fire({
-                    title: 'Carrito eliminado',
-                    icon: 'success'
+                    title: "Carrito eliminado",
+                    icon: "success"
                 })
                 clearCart()
             }
