@@ -18,20 +18,23 @@ E-commerce de libre elección, en este caso para venta de figuritas, albumes y c
 ## Librerías utilizadas
 
  - Vite
-	-
 	- CLI (interfaz de línea de comandos) elegida para este proyecto
  - React Bootstrap
-    -
     - Para el modelado de la web
  - React Icons
-    -
     - Para el carrito de compras
  - Firebase
-    -
     - Para utilizar la base de datos FireStore
  - Sweet Alert
-    -
     - Para alertas dinámicas y agradables para el usuario
+	
+## Agregado de productos
+
+He desarrollado un script para facilitar la carga de nuevos productos en Firebase, el cual se encuentra en la siguiente ruta:
+
+	/src/utils/scriptCargaProductosFirebase.js
+	
+Deberá modificar el listado con nuevos objetos que desee cargar
 
 ## Navegabilidad (instancia Pre-entrega, posteriormente cambié el enfoque del sitio)
 
