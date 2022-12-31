@@ -3,11 +3,10 @@ import { GiShoppingCart } from "react-icons/gi";
 import { CartContext } from "./CartContext"
 import { useContext } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
-import { serverTimestamp, doc, updateDoc, increment } from "firebase/firestore"
-import { db } from "../utils/firebaseConfig"
+import { serverTimestamp } from "firebase/firestore"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-import { sendOrderToFireStore } from "../utils/ABMFirebase"
+import { sendOrderToFireStore, updateOrderFirestore } from "../utils/ABMFirebase"
 
 const Cart = () => {
 
@@ -85,17 +84,8 @@ const Cart = () => {
                 mostrarAlertBasico("Compra exitosa", `se generó la orden de compra nro: ${result.id}`, "success")
 
                 // Actualizando stock
-                const updateOrderFirestore = async(item) => {
-                    const itemRef = doc(db, "products", item.idProd)
-                    await updateDoc(itemRef, {
-                        stock: increment(-item.qty)
-                    })
-                    return itemRef
-                }
-
                 cartItems.forEach((item) =>
                     updateOrderFirestore(item)
-                        .then(result => console.log("Stock actualizado correctamente")) // ! QUE PONGO EN EL THEN???????? **************
                         .catch(err => console.log(err))
                 )
 

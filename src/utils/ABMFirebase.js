@@ -1,4 +1,4 @@
-import { collection, getDocs, getDoc, setDoc, doc, where, query } from "firebase/firestore"
+import { collection, getDocs, getDoc, setDoc, updateDoc, doc, increment, where, query } from "firebase/firestore"
 import { db } from "../utils/firebaseConfig"
 
 export const getCollectionFromFirebase = async (idCategoriaParam) => {
@@ -35,4 +35,12 @@ export const sendOrderToFireStore = async(orden) => {
     const newProductRef = doc(collection(db, "orders"))
     await setDoc(newProductRef, orden)
     return newProductRef
+}
+
+export const updateOrderFirestore = async(item) => {
+    const itemRef = doc(db, "products", item.idProd)
+    await updateDoc(itemRef, {
+        stock: increment(-item.qty)
+    })
+    return itemRef
 }
