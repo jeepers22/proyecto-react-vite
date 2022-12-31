@@ -2,12 +2,14 @@ import React from "react"
 import Button from "react-bootstrap/Button"
 import { useState } from "react"
 
-const ItemCount = ({ onAdd }) => {
+const ItemCount = ({ onAdd, stock }) => {
 
     const [count, setCount] = useState(0)
 
     const incrementarUnidadItem = () => {
-        setCount(count + 1)
+        if (count < stock) {
+            setCount(count + 1)
+        }
     }
 
     const restarUnidadItem = () => {

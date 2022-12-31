@@ -16,8 +16,6 @@ const ItemDetail = ({ item }) => {
         if (item.stock >= qty) {
             setItemCount(qty)
             addItem(item, qty)
-        } else {
-            alert(`No disponemos de ${qty} unidades de ${item.nombre}`)
         }
     }
 
@@ -37,7 +35,7 @@ const ItemDetail = ({ item }) => {
                     // Si tengo alguna cantidad seleccionada
                     ? <NavLink to={`/cart`} href="#"><Button variant="danger" className="mx-5 mt-3" >Checkout</Button></NavLink>
                     // Si tengo 0 items agregados
-                    : <ItemCount onAdd={onAdd} />
+                    : <ItemCount onAdd={onAdd} stock={item.stock} />
                     }
                 </div>
             </div>
