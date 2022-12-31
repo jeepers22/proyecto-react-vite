@@ -13,7 +13,8 @@ const CartContextProvider = ({ children }) => {
                 idProd: item.idProd,
                 nombre: item.nombre,
                 precio: item.precio,
-                qty: quantity
+                qty: quantity,
+                portada: item.portada
             }])
         }
 
@@ -25,7 +26,8 @@ const CartContextProvider = ({ children }) => {
                 idProd: itemCart.idProd,
                 nombre: itemCart.nombre,
                 precio: item.precio,
-                qty: itemCart.qty + quantity
+                qty: itemCart.qty + quantity,
+                portada: item.portada
             }
             : itemCart
         )

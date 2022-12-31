@@ -15,16 +15,16 @@ const ItemCount = ({ onAdd }) => {
     }
 
     return (
-        <div className="d-flex flex-direction-row">
-            <button variant="grey" onClick={restarUnidadItem}>-</button>
+        <div className="d-flex flex-direction-row justify-content-end gap-1">
+            <Button variant="warning" className="border-0" onClick={restarUnidadItem}>-</Button>
             <h5 className="m-2 my-auto">{count}</h5>
-            <button variant="grey" onClick={incrementarUnidadItem}>+</button>
+            <Button variant="warning" className="border-0" onClick={incrementarUnidadItem}>+</Button>
             {
             count
             // Si tengo alguna cantidad seleccionada
-            ? <Button className="mx-3" onClick={() => onAdd(count)}>Agregar al carrito</Button>
+            ? <Button variant="warning" className="mx-3" onClick={() => onAdd(count)}>Agregar al carrito</Button>
             // Si tengo 0 items agregados
-            : <Button className="mx-3" disabled>Agregar al carrito</Button>
+            : <Button variant="warning" className="mx-3" disabled>Agregar al carrito</Button>
             }
         </div>
     )

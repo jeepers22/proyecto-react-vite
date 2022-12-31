@@ -2,7 +2,7 @@ const catalogo = [
     {
         idCategoria: 1,
         categoria: "Album",
-        nombre: "FIFA World Cup - Qatar 2022",
+        nombre: "World Cup - Qatar 2022",
         anio: 2022,
         precio: 2500,
         stock: 10,
@@ -22,7 +22,7 @@ const catalogo = [
     {
         idCategoria: 2,
         categoria: "Figuritas",
-        nombre: "Figurita Messi",
+        nombre: "Messi",
         anio: 2022,
         precio: 5500,
         stock: 15,
@@ -32,7 +32,7 @@ const catalogo = [
     {
         idCategoria: 2,
         categoria: "Figuritas",
-        nombre: "Figurita Cristiano Ronaldo",
+        nombre: "Cristiano Ronaldo",
         anio: 2022,
         precio: 3300,
         stock: 1,
@@ -42,8 +42,8 @@ const catalogo = [
     {
         idCategoria: 2,
         categoria: "Figuritas",
-        nombre: "Paquete Qatar 2022",
-        anio: 2017,
+        nombre: "Qatar 2022",
+        anio: 2022,
         precio: 2800,
         stock: 5,
         descripcion: "Figuritas Qatar 2022 en paquete sellado",
@@ -52,8 +52,8 @@ const catalogo = [
     {
         idCategoria: 2,
         categoria: "Figuritas",
-        nombre: "Paquete Naruto 2021",
-        anio: 2004,
+        nombre: "Naruto 2021",
+        anio: 2021,
         precio: 1500,
         stock: 8,
         descripcion: "Figuritas Naruto 2021 en paquete sellado",
@@ -92,11 +92,11 @@ const catalogo = [
     {
         idCategoria: 3,
         categoria: "Coleccionables",
-        nombre: "Slin Voda",
+        nombre: "Slinn Voda",
         anio: 2004,
         precio: 1500,
         stock: 8,
-        descripcion: "Slin Voda, el Abisal Emergente. Estupenda bestia marina con un asombroso poder",
+        descripcion: "Slinn Voda, el Abisal Emergente. Estupenda bestia marina con un asombroso poder",
         portada: "https://res.cloudinary.com/datqk3byv/image/upload/v1672152282/magic-4_bjw8g5.jpg"
     }
 ]

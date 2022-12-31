@@ -1,0 +1,16 @@
+.detail-container {
+    width: 100%;
+    height: calc(100vh - 76px);
+}
+
+.detail-img {
+    width: 35%;
+}
+
+.detail-img img {
+    width: 100%;
+}
+
+.detail-info {
+    height: 80%;
+}

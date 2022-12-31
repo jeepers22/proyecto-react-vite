@@ -1,6 +1,13 @@
+.card-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
 .card-container {
     width: 250px;
-    /* background-color: #eee; */
+    overflow: hidden;
 }
 
 .card-img-container {
@@ -8,15 +15,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 5px solid #fce7c0;
 }
 
 .card-img {
     max-width: 220px;
 }
 
+.card-body {
+    background-color: #fce7c0;
+}
+
 .card-button {
-    border: none;
     background-color: orange;
-    color: #fff;
-    padding: 5px 10px;
+    width: 100%;
+    border-radius: 0;
+}
+
+.card-button:hover {
+    background-color: #ff7d04;
 }

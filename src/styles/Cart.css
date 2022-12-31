@@ -1,0 +1,37 @@
+.cart-container {
+    width: 100%;
+    height: calc(100vh - 76px);
+}
+
+.cart-title {
+    width: 100%;
+}
+
+.cart-row {
+    background-color: #fce7c0;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 50%)
+}
+
+.item-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.cart-img img {
+    width: 100%;
+}
+
+.cart-empty {
+    width: 100%;
+    height: calc(100vh - 76px);
+    background-color: #eee;
+}
+
+.logo-empty {
+    font-size: 5rem;
+    color: orange;
+}
