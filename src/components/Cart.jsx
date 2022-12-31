@@ -1,16 +1,13 @@
-import React from "react"
 import "../styles/Cart.css"
 import { GiShoppingCart } from "react-icons/gi";
 import { CartContext } from "./CartContext"
 import { useContext } from "react"
-import Container from "react-bootstrap/Container"
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from "react-bootstrap/Button"
-import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore"
+import { Container, Row, Col, Button } from "react-bootstrap"
+import { serverTimestamp, doc, updateDoc, increment } from "firebase/firestore"
 import { db } from "../utils/firebaseConfig"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { sendOrderToFireStore } from "../utils/ABMFirebase"
 
 const Cart = () => {
 
@@ -83,13 +80,7 @@ const Cart = () => {
             total: calcTotalPrice()
         }
 
-        const sendOrderToFireStore = async() => {
-            const newProductRef = doc(collection(db, "orders"))
-            await setDoc(newProductRef, orden)
-            return newProductRef
-        }
-
-        sendOrderToFireStore()
+        sendOrderToFireStore(orden)
             .then(result => {
                 mostrarAlertBasico("Compra exitosa", `se generó la orden de compra nro: ${result.id}`, "success")
 

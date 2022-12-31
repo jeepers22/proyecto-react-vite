@@ -1,4 +1,4 @@
-import { collection, getDocs, getDoc, doc, where, query } from "firebase/firestore"
+import { collection, getDocs, getDoc, setDoc, doc, where, query } from "firebase/firestore"
 import { db } from "../utils/firebaseConfig"
 
 export const getCollectionFromFirebase = async (idCategoriaParam) => {
@@ -29,4 +29,10 @@ export const getDocFromFirebase = async (idProdParam) => {
     } else {
         console.log("Intentando acceder a un Item inexistente")
     }
+}
+
+export const sendOrderToFireStore = async(orden) => {
+    const newProductRef = doc(collection(db, "orders"))
+    await setDoc(newProductRef, orden)
+    return newProductRef
 }
